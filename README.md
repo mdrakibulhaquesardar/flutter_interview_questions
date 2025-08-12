@@ -66,45 +66,7 @@ PR/Issue করতে পারেন নতুন প্রশ্ন, উন্
 - ছোট উদাহরণ দিন
 - “কখন এটা কাজে লাগে” ১–৩ বুলেট দিন
 
----
 
-## 🧪 স্যাম্পল Q&A ফরম্যাট
-
-### প্রশ্ন: StatelessWidget আর StatefulWidget-এর পার্থক্য কী?
-
-**উত্তর:**
-
-- `StatelessWidget`: Immutable UI; ডেটা না বদলালে UI বদলায় না।
-- `StatefulWidget`: Mutable state আছে; ইউজার ইন্টারঅ্যাকশন/ডেটা চেঞ্জে রিবিল্ড হয়।
-
-**উদাহরণ:**
-
-```dart
-class MyStateless extends StatelessWidget {
-  const MyStateless({super.key});
-  @override
-  Widget build(BuildContext context) => const Text('Hello');
-}
-
-class MyStateful extends StatefulWidget {
-  const MyStateful({super.key});
-  @override
-  State<MyStateful> createState() => _MyStatefulState();
-}
-
-class _MyStatefulState extends State<MyStateful> {
-  int counter = 0;
-  @override
-  Widget build(BuildContext context) => ElevatedButton(
-        onPressed: () => setState(() => counter++),
-        child: Text('Count: $counter'),
-      );
-}
-```
-
-**Interview Tips:** Stateless হলে “data flows in only”; Stateful হলে “internal state changes UI”.
-
----
 
 ## 📩 কানেক্ট
 
